@@ -1,0 +1,11 @@
+//
+//  Production.xcconfig
+//  Animals
+//
+//  Created by Mohindra Bhati on 04/07/24.
+//
+
+// MARK: Configrations for Production & Release server
+API_KEY = pfFQJxLiPMYqvY5rZXbYdw==VBjYVanTRFZdEhx9
+AUTHORIZATION = F0RsC7L6viQO7bzFmZTKs7hwGWhXlwm5TjAozyXUwkTmB8INisxbwjVg
+
