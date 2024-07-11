@@ -124,6 +124,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39CF1AAC2C3FE5E20061F792 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				39CFA6A52C3F8BB4009C1ECB /* View+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		39CF1AAD2C3FE5FC0061F792 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				39CFA69E2C3ECE0E009C1ECB /* Animal.xcdatamodeld */,
+				39CFA6A12C3ECE37009C1ECB /* CoreDataStack.swift */,
+				39CFA6A32C3ECF62009C1ECB /* StorageManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		39CFA62E2C3BE79F009C1ECB = {
 			isa = PBXGroup;
 			children = (
@@ -148,11 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				39CFA68B2C3E3519009C1ECB /* Info.plist */,
-				39CFA69E2C3ECE0E009C1ECB /* Animal.xcdatamodeld */,
-				39CFA6A12C3ECE37009C1ECB /* CoreDataStack.swift */,
-				39CFA6A32C3ECF62009C1ECB /* StorageManager.swift */,
-				39CFA6A52C3F8BB4009C1ECB /* View+Extension.swift */,
-				39CF1AAA2C3FE1350061F792 /* ToastView.swift */,
+				39CF1AAD2C3FE5FC0061F792 /* CoreData */,
+				39CF1AAC2C3FE5E20061F792 /* Extensions */,
 				39CFA6802C3E3373009C1ECB /* Configuration */,
 				39CFA68E2C3E407E009C1ECB /* Networking */,
 				39CFA6982C3EA22A009C1ECB /* NetworkRequest */,
@@ -194,6 +209,7 @@
 		39CFA6682C3BE822009C1ECB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				39CF1AAA2C3FE1350061F792 /* ToastView.swift */,
 				39CFA6692C3BE84C009C1ECB /* Home.swift */,
 				39CFA6732C3D3819009C1ECB /* AnimalCategoryListView.swift */,
 				39CFA66F2C3C2988009C1ECB /* AnimalImagesCollectionView.swift */,
