@@ -10,7 +10,9 @@ import CoreData
 
 class StorageManager {
     private init() {}
+    
     static let shared = StorageManager()
+    
     private let context = CoreDataStack.shared.context
     
     func savePhoto(animal: AnimalModel, photo: Photo) {

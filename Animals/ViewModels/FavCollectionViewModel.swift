@@ -32,8 +32,6 @@ class FavCollectionViewModel: ObservableObject {
         isPhotoAvailable =  filterdAnimalList.isEmpty ? false : true
     }
     
-    
-    
     func deletePhoto(photo: PhotoData, filter: String){
         StorageManager.shared.deletePhoto(photoData: photo)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {

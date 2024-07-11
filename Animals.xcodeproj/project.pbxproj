@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39CF1AAB2C3FE1350061F792 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF1AAA2C3FE1350061F792 /* ToastView.swift */; };
 		39CFA63B2C3BE79F009C1ECB /* AnimalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA63A2C3BE79F009C1ECB /* AnimalsApp.swift */; };
 		39CFA63D2C3BE79F009C1ECB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA63C2C3BE79F009C1ECB /* ContentView.swift */; };
 		39CFA63F2C3BE79F009C1ECB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA63E2C3BE79F009C1ECB /* Item.swift */; };
@@ -28,7 +29,6 @@
 		39CFA6842C3E3373009C1ECB /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 39CFA6812C3E3373009C1ECB /* Development.xcconfig */; };
 		39CFA6852C3E3373009C1ECB /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 39CFA6822C3E3373009C1ECB /* Production.xcconfig */; };
 		39CFA6862C3E3373009C1ECB /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA6832C3E3373009C1ECB /* Configuration.swift */; };
-		39CFA6882C3E33BD009C1ECB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA6872C3E33BD009C1ECB /* Reachability.swift */; };
 		39CFA68A2C3E33DA009C1ECB /* NetworkingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA6892C3E33DA009C1ECB /* NetworkingConstants.swift */; };
 		39CFA68D2C3E3959009C1ECB /* AnimalCategoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA68C2C3E3959009C1ECB /* AnimalCategoryRequest.swift */; };
 		39CFA6902C3E452D009C1ECB /* AnimalImageListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA68F2C3E452D009C1ECB /* AnimalImageListRequest.swift */; };
@@ -60,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39CF1AAA2C3FE1350061F792 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		39CFA6372C3BE79F009C1ECB /* Animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39CFA63A2C3BE79F009C1ECB /* AnimalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsApp.swift; sourceTree = "<group>"; };
 		39CFA63C2C3BE79F009C1ECB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,7 +85,6 @@
 		39CFA6812C3E3373009C1ECB /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		39CFA6822C3E3373009C1ECB /* Production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		39CFA6832C3E3373009C1ECB /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		39CFA6872C3E33BD009C1ECB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		39CFA6892C3E33DA009C1ECB /* NetworkingConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingConstants.swift; sourceTree = "<group>"; };
 		39CFA68B2C3E3519009C1ECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		39CFA68C2C3E3959009C1ECB /* AnimalCategoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCategoryRequest.swift; sourceTree = "<group>"; };
@@ -152,6 +152,7 @@
 				39CFA6A12C3ECE37009C1ECB /* CoreDataStack.swift */,
 				39CFA6A32C3ECF62009C1ECB /* StorageManager.swift */,
 				39CFA6A52C3F8BB4009C1ECB /* View+Extension.swift */,
+				39CF1AAA2C3FE1350061F792 /* ToastView.swift */,
 				39CFA6802C3E3373009C1ECB /* Configuration */,
 				39CFA68E2C3E407E009C1ECB /* Networking */,
 				39CFA6982C3EA22A009C1ECB /* NetworkRequest */,
@@ -228,7 +229,6 @@
 				39CFA6892C3E33DA009C1ECB /* NetworkingConstants.swift */,
 				39CFA6782C3D85F1009C1ECB /* NetworkServiceProvider.swift */,
 				39CFA67E2C3E332D009C1ECB /* ApiRequest.swift */,
-				39CFA6872C3E33BD009C1ECB /* Reachability.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -407,10 +407,10 @@
 				39CFA66A2C3BE84C009C1ECB /* Home.swift in Sources */,
 				39CFA6A62C3F8BB4009C1ECB /* View+Extension.swift in Sources */,
 				39CFA68D2C3E3959009C1ECB /* AnimalCategoryRequest.swift in Sources */,
-				39CFA6882C3E33BD009C1ECB /* Reachability.swift in Sources */,
 				39CFA68A2C3E33DA009C1ECB /* NetworkingConstants.swift in Sources */,
 				39CFA66C2C3BED4A009C1ECB /* CategoryModel.swift in Sources */,
 				39CFA63B2C3BE79F009C1ECB /* AnimalsApp.swift in Sources */,
+				39CF1AAB2C3FE1350061F792 /* ToastView.swift in Sources */,
 				39CFA69D2C3EC607009C1ECB /* FavCollectionViewModel.swift in Sources */,
 				39CFA6A22C3ECE37009C1ECB /* CoreDataStack.swift in Sources */,
 				39CFA6742C3D3819009C1ECB /* AnimalCategoryListView.swift in Sources */,

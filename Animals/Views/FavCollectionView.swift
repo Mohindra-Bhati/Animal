@@ -14,46 +14,44 @@ struct FavCollectionView: View {
     @State var selectedFilter = "All"
 
     var body: some View {
-        HStack {
-            Button(action: {
-                mode.wrappedValue.dismiss()
-                
-            }) {
-                Image(systemName: "arrow.left")
-                    .imageScale(.large)
-                    .tint(.blue)
-                    .padding()
-                    .frame(width: 70, height: 90)
-                    .overlay(RoundedRectangle(cornerRadius: 25.0).stroke().opacity(0.3))
-                    .foregroundColor(.red.opacity(0.9))
-            }
-            
-            Spacer()
-            Text("Saved Animal Images")
-                .font(.system(size: 36))
-                .padding(.leading)
-        }
-        .padding()
-        
-        FilterView
-        .padding()
-        
-        ZStack {
-            ScrollView(.vertical, showsIndicators: false) {
-                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
-                    ForEach(viewModel.filterdAnimalList, id: \.id) { obj in
-                        FavAnimalImageView(photo: obj, filter: selectedFilter)
-                    }
+        Group {
+            HStack {
+                Button(action: {
+                    mode.wrappedValue.dismiss()
+                }) {
+                    Image(systemName: "arrow.left")
+                        .imageScale(.large)
+                        .tint(.blue)
+                        .padding()
+                        .frame(width: 70, height: 90)
+                        .overlay(RoundedRectangle(cornerRadius: 25.0).stroke().opacity(0.3))
+                        .foregroundColor(.red.opacity(0.9))
                 }
-                .padding(.trailing, 30)
+                
+                Spacer()
+                Text("Saved Animal Images")
+                    .font(.system(size: 36))
+                    .padding(.leading)
             }
-            .refreshable {
-                viewModel.updateUIwithFilter(name: selectedFilter)
+            .padding()
+            FilterView
+            .padding()
+            
+            ZStack {
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+                        ForEach(0..<viewModel.filterdAnimalList.count, id: \.self) { index in
+                            let obj = viewModel.filterdAnimalList[index]
+                            FavAnimalImageView(viewModel: viewModel, photo: obj, index: index, filter: selectedFilter)
+                        }
+                    }
+                    .padding(.trailing, 30)
+                }
+                .navigationBarBackButtonHidden(true)
+                Image("no-pictures")
+                    .opacity(0.5)
+                    .hidden(viewModel.isPhotoAvailable)
             }
-            .navigationBarBackButtonHidden(true)
-            Image("no-pictures")
-                .opacity(0.5)
-                .hidden(viewModel.isPhotoAvailable)
         }
     }
     
@@ -96,28 +94,30 @@ struct FavCollectionView: View {
     }
 }
 
-//#Preview {
-//    FavCollectionView()
-//}
-
 struct FavAnimalImageView: View {
-    @StateObject var viewModel = FavCollectionViewModel()
-    var photo: PhotoData
-    var filter: String
+    let viewModel: FavCollectionViewModel
+    let photo: PhotoData
+    let index: Int
+    let filter: String
+    
     var body: some View {
         if let url = URL(string: photo.photo ?? "") {
-            ZStack {
-                AsyncImage(url: url)
+        ZStack {
+            AsyncImage(url: url)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 170, height: 215)
+                .clipped()
+            Button(action: {
+                viewModel.deletePhoto(photo: photo,filter: filter)
+            }) {
                 Image("trash-bin")
                     .imageScale(.large)
                     .foregroundColor(.red.opacity(0.9))
                     .padding(.leading, 120)
                     .padding(.bottom, 150)
                     .fixedSize()
-                    .onTapGesture {
-                        viewModel.deletePhoto(photo: photo, filter: filter)
-                    }
             }
+        }
             .fixedSize()
             .padding()
             .frame(width: 170, height: 215)

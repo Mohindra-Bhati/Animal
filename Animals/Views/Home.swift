@@ -34,8 +34,6 @@ struct Home: View {
                                 .overlay(RoundedRectangle(cornerRadius: 25.0).stroke().opacity(0.3))
                                 .foregroundColor(.red.opacity(0.9))
                         }
-                        
-                        
                     }
                 }
                 .padding()
@@ -139,8 +137,6 @@ struct ProductView: View {
             .background(animal.color.opacity(0.3))
             .clipShape(.rect(cornerRadius: 30))
             .padding(.leading, 30)
-            
-            
         }
     }
 }
