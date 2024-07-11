@@ -6,5 +6,12 @@
 	<string>$(API_KEY)</string>
 	<key>AUTH_KEY</key>
 	<string>$(AUTHORIZATION)</string>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>livestock</string>
+		<key>UIColorName</key>
+		<string>LaunchColor</string>
+	</dict>
 </dict>
 </plist>

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39594E7B2C4014EB007E01FE /* AnimalImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39594E7A2C4014EB007E01FE /* AnimalImageView.swift */; };
+		39594E7D2C40158D007E01FE /* FavAnimalImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39594E7C2C40158D007E01FE /* FavAnimalImageView.swift */; };
 		39CF1AAB2C3FE1350061F792 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF1AAA2C3FE1350061F792 /* ToastView.swift */; };
+		39CF1AAF2C40094D0061F792 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CF1AAE2C40094D0061F792 /* UIConstants.swift */; };
 		39CFA63B2C3BE79F009C1ECB /* AnimalsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA63A2C3BE79F009C1ECB /* AnimalsApp.swift */; };
 		39CFA63D2C3BE79F009C1ECB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA63C2C3BE79F009C1ECB /* ContentView.swift */; };
 		39CFA63F2C3BE79F009C1ECB /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CFA63E2C3BE79F009C1ECB /* Item.swift */; };
@@ -60,7 +63,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39594E7A2C4014EB007E01FE /* AnimalImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalImageView.swift; sourceTree = "<group>"; };
+		39594E7C2C40158D007E01FE /* FavAnimalImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavAnimalImageView.swift; sourceTree = "<group>"; };
 		39CF1AAA2C3FE1350061F792 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		39CF1AAE2C40094D0061F792 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		39CFA6372C3BE79F009C1ECB /* Animals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39CFA63A2C3BE79F009C1ECB /* AnimalsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsApp.swift; sourceTree = "<group>"; };
 		39CFA63C2C3BE79F009C1ECB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +148,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		39CF1AB02C400E110061F792 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				39CF1AAE2C40094D0061F792 /* UIConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		39CFA62E2C3BE79F009C1ECB = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +190,7 @@
 				39CFA69B2C3EA5E0009C1ECB /* ViewModels */,
 				39CFA6682C3BE822009C1ECB /* Views */,
 				39CFA6402C3BE7A1009C1ECB /* Assets.xcassets */,
+				39CF1AB02C400E110061F792 /* Constants */,
 				39CFA6422C3BE7A1009C1ECB /* Preview Content */,
 			);
 			path = Animals;
@@ -213,7 +228,9 @@
 				39CFA6692C3BE84C009C1ECB /* Home.swift */,
 				39CFA6732C3D3819009C1ECB /* AnimalCategoryListView.swift */,
 				39CFA66F2C3C2988009C1ECB /* AnimalImagesCollectionView.swift */,
+				39594E7A2C4014EB007E01FE /* AnimalImageView.swift */,
 				39CFA6942C3E7932009C1ECB /* FavCollectionView.swift */,
+				39594E7C2C40158D007E01FE /* FavAnimalImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,13 +440,16 @@
 				39CFA66A2C3BE84C009C1ECB /* Home.swift in Sources */,
 				39CFA6A62C3F8BB4009C1ECB /* View+Extension.swift in Sources */,
 				39CFA68D2C3E3959009C1ECB /* AnimalCategoryRequest.swift in Sources */,
+				39594E7B2C4014EB007E01FE /* AnimalImageView.swift in Sources */,
 				39CFA68A2C3E33DA009C1ECB /* NetworkingConstants.swift in Sources */,
 				39CFA66C2C3BED4A009C1ECB /* CategoryModel.swift in Sources */,
+				39594E7D2C40158D007E01FE /* FavAnimalImageView.swift in Sources */,
 				39CFA63B2C3BE79F009C1ECB /* AnimalsApp.swift in Sources */,
 				39CF1AAB2C3FE1350061F792 /* ToastView.swift in Sources */,
 				39CFA69D2C3EC607009C1ECB /* FavCollectionViewModel.swift in Sources */,
 				39CFA6A22C3ECE37009C1ECB /* CoreDataStack.swift in Sources */,
 				39CFA6742C3D3819009C1ECB /* AnimalCategoryListView.swift in Sources */,
+				39CF1AAF2C40094D0061F792 /* UIConstants.swift in Sources */,
 				39CFA6792C3D85F1009C1ECB /* NetworkServiceProvider.swift in Sources */,
 				39CFA6972C3E9D72009C1ECB /* HomeViewModel.swift in Sources */,
 				39CFA67D2C3E3296009C1ECB /* AnimalImagesViewModel.swift in Sources */,

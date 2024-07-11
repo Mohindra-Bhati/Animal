@@ -25,13 +25,13 @@ struct AnimalCategoryListView: View {
                     .imageScale(.large)
                     .tint(.blue)
                     .padding()
-                    .frame(width: 70, height: 90)
+                    .frame(width: UIConstants.navigationIconWidth, height: UIConstants.navigationIconHeight)
                     .overlay(RoundedRectangle(cornerRadius: 25.0).stroke().opacity(0.3))
                     .foregroundColor(.red.opacity(0.9))
             }
             Spacer()
             Text("Please select an **Animal Category**")
-                .font(.system(size: 32))
+                .font(.system(size: UIConstants.titleFontSize))
                 .padding(.leading)
         }
         .padding()
@@ -68,7 +68,7 @@ struct ListItemView: View {
                     .multilineTextAlignment(.leading)
             }
             .padding()
-            .frame(width: 300, height: 80)
+            .frame(width: UIConstants.listCellWidth, height: UIConstants.listCellHeight)
             .background(Color.gray.opacity(0.3))
             .cornerRadius(10)
         }

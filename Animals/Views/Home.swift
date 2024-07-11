@@ -18,7 +18,7 @@ struct Home: View {
                 VStack {
                     HStack {
                         Text("Please select an **Animal**")
-                            .font(.system(size: 32))
+                            .font(.system(size: UIConstants.titleFontSize))
                             .padding(.leading)
                         
                         Spacer()
@@ -30,7 +30,7 @@ struct Home: View {
                                 .imageScale(.large)
                                 .tint(.blue)
                                 .padding()
-                                .frame(width: 70, height: 90)
+                                .frame(width: UIConstants.navigationIconWidth, height: UIConstants.navigationIconHeight)
                                 .overlay(RoundedRectangle(cornerRadius: 25.0).stroke().opacity(0.3))
                                 .foregroundColor(.red.opacity(0.9))
                         }

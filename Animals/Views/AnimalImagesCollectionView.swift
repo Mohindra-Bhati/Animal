@@ -25,14 +25,14 @@ struct AnimalImagesCollectionView: View {
                         .imageScale(.large)
                         .tint(.blue)
                         .padding()
-                        .frame(width: 70, height: 90)
+                        .frame(width: UIConstants.navigationIconWidth, height: UIConstants.navigationIconHeight)
                         .overlay(RoundedRectangle(cornerRadius: 25.0).stroke().opacity(0.3))
                         .foregroundColor(.red.opacity(0.9))
                 }
                 
                 Spacer()
                 Text("Images For **\(category.name ?? "")**")
-                    .font(.system(size: 36))
+                    .font(.system(size: UIConstants.titleFontSize))
                     .padding(.leading)
             }
             .padding()
@@ -65,54 +65,3 @@ struct AnimalImagesCollectionView: View {
         }
     }
 }
-
-struct AnimalImageView: View {
-    var animal: AnimalModel
-    var photo: Photo
-    @Binding var showToast: Bool
-    var body: some View {
-        
-        ZStack {
-            Image(animal.image).opacity(0.8)
-            AsyncImage(url: URL(string: photo.src?.medium ?? "")!)
-                .frame(width: 170, height: 215)
-                .aspectRatio(contentMode: .fill)
-                .clipped()
-
-            Text(photo.photographer ?? "")
-                .lineLimit(nil)
-                .font(.system(size: 20))
-                .foregroundColor(.white)
-                .padding(.top, 150)
-                .multilineTextAlignment(.leading)
-                .frame(maxWidth: 150, alignment: .leading)
-            
-            Button(action: {
-                showToast = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    withAnimation {
-                        showToast = false
-                    }
-                }
-                StorageManager.shared.savePhoto(animal: animal, photo: photo)
-            }) {
-               Image(systemName: "heart")
-                .imageScale(.large)
-                .foregroundColor(.red.opacity(0.9))
-                .padding(.leading, 120)
-                .padding(.bottom, 150)
-                .fixedSize()
-            }
-        }
-        .fixedSize()
-        .padding()
-        .frame(width: 170, height: 215)
-        .background(animal.color.opacity(0.3))
-        .clipShape(.rect(cornerRadius: 30))
-        .padding(.leading, 30)
-    }
-}
-
-
-
-

@@ -10,6 +10,7 @@ import SwiftUI
 struct FavCollectionView: View {
     @Environment(\.presentationMode) var mode
     @StateObject var viewModel = FavCollectionViewModel()
+    @State private var showToast = false
     
     @State var selectedFilter = "All"
 
@@ -23,17 +24,27 @@ struct FavCollectionView: View {
                         .imageScale(.large)
                         .tint(.blue)
                         .padding()
-                        .frame(width: 70, height: 90)
+                        .frame(width: UIConstants.navigationIconWidth, height: UIConstants.navigationIconHeight)
                         .overlay(RoundedRectangle(cornerRadius: 25.0).stroke().opacity(0.3))
                         .foregroundColor(.red.opacity(0.9))
                 }
                 
                 Spacer()
                 Text("Saved Animal Images")
-                    .font(.system(size: 36))
+                    .font(.system(size: UIConstants.titleFontSize))
                     .padding(.leading)
             }
             .padding()
+            .overlay(
+                VStack {
+                    if showToast {
+                        ToastView(message: "Image Deleted from favorites successfully.")
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
+                            .zIndex(1)
+                    }
+                    Spacer()
+                }
+            )
             FilterView
             .padding()
             
@@ -42,7 +53,7 @@ struct FavCollectionView: View {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
                         ForEach(0..<viewModel.filterdAnimalList.count, id: \.self) { index in
                             let obj = viewModel.filterdAnimalList[index]
-                            FavAnimalImageView(viewModel: viewModel, photo: obj, index: index, filter: selectedFilter)
+                            FavAnimalImageView(viewModel: viewModel, photo: obj, index: index, filter: selectedFilter, showToast: $showToast)
                         }
                     }
                     .padding(.trailing, 30)
@@ -72,7 +83,7 @@ struct FavCollectionView: View {
                                     Image(animal.image)
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
-                                        .frame(width: 40, height: 40)
+                                        .frame(width: UIConstants.iconWidth, height: UIConstants.iconHeight)
                                         .foregroundColor(selectedFilter == animal.name ? .yellow : .black)
                                         
                                 }
@@ -94,35 +105,3 @@ struct FavCollectionView: View {
     }
 }
 
-struct FavAnimalImageView: View {
-    let viewModel: FavCollectionViewModel
-    let photo: PhotoData
-    let index: Int
-    let filter: String
-    
-    var body: some View {
-        if let url = URL(string: photo.photo ?? "") {
-        ZStack {
-            AsyncImage(url: url)
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 170, height: 215)
-                .clipped()
-            Button(action: {
-                viewModel.deletePhoto(photo: photo,filter: filter)
-            }) {
-                Image("trash-bin")
-                    .imageScale(.large)
-                    .foregroundColor(.red.opacity(0.9))
-                    .padding(.leading, 120)
-                    .padding(.bottom, 150)
-                    .fixedSize()
-            }
-        }
-            .fixedSize()
-            .padding()
-            .frame(width: 170, height: 215)
-            .clipShape(.rect(cornerRadius: 30))
-            .padding(.leading, 30)
-        }
-    }
-}
